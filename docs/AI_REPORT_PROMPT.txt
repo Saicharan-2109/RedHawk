@@ -1,0 +1,35 @@
+I want you to write a detailed academic project report using the attached PROJECT_REPORT_BRIEF.md as the authoritative description of the implemented project.
+
+Project: Spatial Matrix Vision Lab.
+Suggested title: Spatial Matrix Vision Lab: Explainable Image Transformation and Boundary Forecasting Using Spatial State-Space Matrices.
+If a big-data course title is necessary, use: Spatial Matrix Vision Lab: An Image-Processing Prototype and Its Potential Role in Big-Data Image Analytics.
+
+Write in clear formal English that an undergraduate engineering student can understand and explain in a viva. Explain technical terms when first introduced. Preserve the actual equations, defaults, technologies, features, limits, and verification facts in the brief.
+
+Produce a coherent report with: abstract; introduction and motivation; problem statement; objectives; relevant mathematical and image-processing background; requirements; system architecture; module design; methodology and equations; a worked numerical example; website workflow and features; implementation details; testing and actual results; relationship to big data; limitations; future work; conclusion; references; and a setup/API appendix. Use tables, pseudocode, and architecture diagrams where they improve clarity. If a cover page or institution-specific section is needed, use explicit placeholders for details I have not supplied.
+
+Keep three categories distinct throughout:
+1. Implemented and verified capabilities.
+2. Mathematical interpretation and known limitations.
+3. Proposed future work, especially distributed/big-data architecture.
+
+The current project is a local Python/Streamlit application using NumPy, OpenCV, and Pillow. It processes one selected PNG/JPEG image at a time, producing directional detail, an inverse-operator intensity response, and a right-boundary forecast. It does not currently implement Spark, Hadoop, Kafka, distributed storage, batch scheduling, streaming ingestion, model training, or semantic image reconstruction.
+
+Explain the big-data relationship honestly. Discuss how the numerical component could serve as one stage of a large image-data pipeline; relate volume, velocity, variety, veracity and value to a possible workload; describe the supplied proposed storage/worker/dashboard design as future work. Explain that NumPy vectorization and many pixels alone do not make the current app an implemented big-data platform. Mention independent-image/row parallelism and the two-pixel left halo required if future processing splits image columns. Treat the 490 GB example as hypothetical arithmetic only.
+
+Preserve these scientific caveats:
+- The method is ARIMA-inspired spatial state-space algebra, not a fitted ARIMA(3,1,1) model.
+- The fixed noise seed is not an estimated residual or a new stochastic innovation.
+- The default difference response does not eliminate constant backgrounds.
+- The inverse response is not proven denoising or illumination restoration and can saturate.
+- Forecasting uses the true right boundary, has zero fourth-state seed, is unaffected by theta/noise settings in this implementation, and tends toward zero under stable dynamics.
+- Absolute value, clipping and quantization mean the entire displayed pipeline is not purely linear.
+- The 63 passing tests establish specified numerical/functional behavior, not reconstruction accuracy, superior image quality, production load capacity or distributed scaling.
+
+Do not invent datasets, training procedures, experimental metrics, benchmark results, references, user studies, public deployments, authors, institutions, supervisors or student identities. Do not describe planned components as completed. Do not invent a literature survey; use verifiable primary sources for background and cite only sources actually consulted. The authoritative sources linked in the brief are a starting point, not evidence that those frameworks were used in the code.
+
+If more evaluation is needed, propose an experiment and state what data and measurements would be required. Do not present proposed results as observed results. The installed/verified runtime is Python 3.12.14, and the pinned packages require at least Python 3.12. Docker configuration exists but Docker execution has not been verified.
+
+Use the brief's mathematical example [100,150,200] and its actual outputs when explaining the mechanism. Include the exact default transition matrix, operator equations, stability conditions, main control ranges, export contents and file/module structure. Explain the limitations and significance of the export manifest and cached engine-only timer.
+
+Finish with a short viva preparation appendix containing likely questions and accurate answers, including: Is this an actual ARIMA model? Is this already a big-data system? Why do forecasts fade? Why can the inverse image become white? What do the 63 tests prove? What needs to change before distributed processing can be claimed?
